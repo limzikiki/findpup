@@ -7,6 +7,9 @@ import { StyleSheet } from 'react-native';
 export default () => {
     return (
         <View style={styles.container} padding-10>
+            <Text text30>
+                Search Results
+            </Text>
             <MyPetsCard
                 imageSource="https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 title="King Charles"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Colors } from 'react-native-ui-lib';
+import { View, Text, Image, Colors, TouchableOpacity } from 'react-native-ui-lib';
 import { Pressable } from 'react-native';
 
 import { StyleSheet } from 'react-native';
@@ -15,25 +15,22 @@ interface MyPetsCardProps {
 
 const MyPetsCard: React.FC<MyPetsCardProps> = ({ imageSource, title, subtitle, specie, onPress }) => {
     return (
-        <View>
-            <Pressable onPress={onPress} disabled={!(!!onPress ?? false)}>
-                <View style={Styles.container}>
-                    <Image
-                        source={imageSource}
-                        style={{ width: 80, height: 80, marginRight: 10 }}
-                    />
-                    <View margin-10>
-                        <Text style={{ fontSize: 16, color: Colors.blue30, fontWeight:"bold" }}>{title}</Text>
-                        <Text style={{ fontSize: 14, color: 'gray' }}>{specie}</Text>
-                        {
-                        /* If the subtitle is not provided, it will not be rendered */
-                        subtitle && <Text style={{ fontSize: 14, color: 'gray' }}>{subtitle}</Text>
-                        }
-                    </View>
+        <TouchableOpacity  onPress={onPress} disabled={!(!!onPress ?? false)}>
+            <View style={Styles.container}>
+                <Image
+                    source={imageSource}
+                    style={{ width: 80, height: 80, marginRight: 10 }}
+                />
+                <View margin-10>
+                    <Text style={{ fontSize: 16, fontWeight:"bold" }}>{title}</Text>
+                    <Text style={{ fontSize: 14, color: 'gray' }}>{specie}</Text>
+                    {
+                    /* If the subtitle is not provided, it will not be rendered */
+                    subtitle && <Text style={{ fontSize: 14, color: 'gray' }}>{subtitle}</Text>
+                    }
                 </View>
-            </Pressable>
-        </View>
-
+            </View>
+        </TouchableOpacity>
     );
 };
 
