@@ -18,7 +18,7 @@ const MyPetsCard: React.FC<MyPetsCardProps> = ({ imageSource, title, subtitle, s
         <TouchableOpacity  onPress={onPress} disabled={!(!!onPress ?? false)}>
             <View style={Styles.container}>
                 <Image
-                    source={imageSource}
+                    source={{uri: imageSource }}
                     style={{ width: 80, height: 80, marginRight: 10 }}
                 />
                 <View margin-10>

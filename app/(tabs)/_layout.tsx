@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
@@ -33,9 +33,11 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
-            <Link replace href="/login" style={{ padding: 10 }}>
-              <FontAwesome name="sign-out" size={24} color={Colors[colorScheme ?? 'light'].tint} />
-            </Link>
+            <Pressable>
+              <Link replace href="/login" style={{ padding: 10 }}>
+                <FontAwesome name="sign-out" size={24} color={Colors[colorScheme ?? 'light'].tint} />
+              </Link>
+            </Pressable>
           )
         }}        
       />
